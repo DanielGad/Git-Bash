@@ -2,7 +2,7 @@
 
 int main()
 {
-    int subjectNum, i, request;
+    int subjectNum, i;
     char rate[20], Lname[20], Fname[20], Mname[20], subname1[20], subname2[20], subname3[20], subname4[20], subname5[20], subname6[20], subname7[20], subname8[20], subname9[20], subname10[20];
     char subname11[20], subname12[20], subname13[20], subname14[20], subname15[20], subname16[20], subname17[20], subname18[20], subname19[20], subname20[20];
     double submark1, submark2, submark3, submark4, submark5, submark6, submark7, submark8, submark9, submark10, submark11, submark12, submark13, submark14, submark15, submark16, submark17, submark18, submark19, submark20;
@@ -1217,12 +1217,14 @@ int main()
         printf("\nInvalid input");
     }
 
+    int request;
+
     printf("\n\nWould you like to Perform another request.\n1 - 'Yes'\n2 - 'No': \n");
     scanf("%d", &request);
+    if (request == 1)
+    {
     for (int i = request; i < 20;)
     {
-        if (request == 1)
-        {
     printf("Your Name;\nLastname: ");
     scanf("%s", &Lname);
     printf("Firstname: ");
@@ -2436,19 +2438,21 @@ int main()
     int request;
     printf("\n\nWould you like to Perform another request.\n1 - 'Yes'\n2 - 'No': \n");
     scanf("%d", &request);
-    if (request > 1 || request < 1)
+    if (request == 2)
     {
+        printf("\nGood Bye.\n");
         break;
     }
-        }
-        else
-        {
-            printf("\nInvalid input\n");
-        }
+    if (request > 2 || request < 1)
+    {
+        printf("\nInvalid input\n");
+        break;
     }
-
-
-
+    } 
+    }
+    if (request == 2)
+    printf("\nGood Bye.\n");
+    
     printf("\n\nRate Me;\nGood\nFair\nBad: ");
     scanf("%s", &rate);
     printf("\nThanks For The Feedback.\n");
